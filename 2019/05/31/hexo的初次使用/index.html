@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Izual">
 <meta property="og:description" content="初次接触 hexo，建了这么个小博客。记录下使用心得。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:25:43.880Z">
+<meta property="og:updated_time" content="2019-05-31T07:35:24.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo的初次使用">
 <meta name="twitter:description" content="初次接触 hexo，建了这么个小博客。记录下使用心得。">
@@ -439,13 +439,13 @@
 </li>
 </ul>
 </li>
-<li><p>运行 hexo 看下效果：</p>
+<li><p>运行 hexo 看下效果，在终端下：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h3><p>在 GitHub 上，新建 repositories。Repository name 需要设置为自己 GitHub 账号一样的名字。不然访问不到。<br>要部署到 GitHub 不光需要 Git（需要配置） ，还需要安装 deploy。</p>
+<h3 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h3><p>在 GitHub 上，新建 repositories。Repository name 需要设置为自己 GitHub 账号一样的名字，不然访问不到（亲测）。<br>要部署到 GitHub 不光需要 Git（需要配置） ，还需要安装 deploy。</p>
 <ul>
 <li><p>配置 Git：</p>
 <ul>
@@ -453,7 +453,9 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="comment"># 或 cd .ssh</span></span><br><span class="line"><span class="comment"># 如果没有则提示： No such file or directory</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建 SSH Key</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br><span class="line"><span class="comment"># 会显示的内容：</span></span><br><span class="line"><span class="comment"># Generating public/private rsa key pair.</span></span><br><span class="line"><span class="comment"># Enter file in which to save the key (/c/Users/16627/.ssh/id_rsa):</span></span><br><span class="line"><span class="comment"># 这时提示让输入文件名，用于保存生成的 SSH Key。</span></span><br><span class="line"><span class="comment"># 如果不输入，直接回车，那么会默认生成 id_rsa 和 id_rsa.pub 两个密钥文件。</span></span><br><span class="line"><span class="comment"># Created directory ‘/c/Users/16627/.ssh’.</span></span><br><span class="line"><span class="comment"># 接着会提示 输入两次密码（该密码是 push 文件时需要的，不是 GitHub 密码），</span></span><br><span class="line"><span class="comment"># 可以不输入密码，直接回车。那么 fetch 和 push 时就不需要密码。</span></span><br><span class="line"><span class="comment"># Enter passphrase (empty for no passphrase):</span></span><br><span class="line"><span class="comment"># Enter same passphrase again:</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
+<p>  会显示的内容：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generating public/private rsa key pair.</span></span><br><span class="line"><span class="comment"># Enter file in which to save the key (/c/Users/16627/.ssh/id_rsa):</span></span><br><span class="line"><span class="comment"># 这时提示让输入文件名，用于保存生成的 SSH Key。</span></span><br><span class="line"><span class="comment"># 如果不输入，直接回车，那么会默认生成 id_rsa 和 id_rsa.pub 两个密钥文件。</span></span><br><span class="line"><span class="comment"># Created directory ‘/c/Users/16627/.ssh’.</span></span><br><span class="line"><span class="comment"># 接着会提示 输入两次密码（该密码是 push 文件时需要的，不是 GitHub 密码），</span></span><br><span class="line"><span class="comment"># 可以不输入密码，直接回车。那么 fetch 和 push 时就不需要密码。</span></span><br><span class="line"><span class="comment"># Enter passphrase (empty for no passphrase):</span></span><br><span class="line"><span class="comment"># Enter same passphrase again:</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>添加 SSH Key 到 GitHub</p>
 <ul>
@@ -610,7 +612,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -621,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
